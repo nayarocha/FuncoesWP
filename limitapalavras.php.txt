@@ -1,0 +1,20 @@
+ function limit_words($string, $word_limit) {  
+       $words = explode(' ', $string, ($word_limit + 1));  
+       if(count($words) > $word_limit) { array_pop($words); array_push($words, "..."); }  
+       return implode(' ', $words);  
+ }  
+
+
+- Limitando em 13 palavras o resumo (excerpt)
+
+ <?php echo(limit_words(get_the_excerpt(),13)); ?>   
+
+
+- Limitando em 2 palavras o título (title)
+
+ <?php echo(limit_words(get_the_title(),2)); ?>   
+
+
+- Limitando em 25 palavras o conteúdo (content)
+
+ <?php echo(limit_words(get_the_content(),25)); ?>   
